@@ -12,6 +12,8 @@ WOW_CHANCE = 5
 MAX_WHITESPACE = 15
 MIN_WHITESPACE = 2
 
+MAX_PREPENDEE_LEN = 0
+
 def doge_syntax(clause):
     return clause if len(clause.split())>1 else choice(DOGE_PREFIXES)+" "+clause
 
@@ -23,9 +25,21 @@ def random_select_no_repeat(max, ref_pool):
     ref_pool.append(index)
     return index
     
+def prepend(orig, addition):
+    orig = addition + orig    
+
 def random_insert_clause(clause, img_file):
-    # img_file[randrange(0,len(img_file))] += clause
-    img_file[random_select_no_repeat(len(img_file), used_indices)] += clause
+    if randrange(0,2)==1:
+        img_file[random_select_no_repeat(len(img_file), used_indices)] += (random_whitespace()+clause)
+    else:
+        index = random_select_no_repeat(len(img_file), used_indices)
+        prependee = clause + ""
+
+        img_file[index] = prependee + img_file[index]
+        if len(clause)>MAX_PREPENDEE_LEN:
+            global MAX_PREPENDEE_LEN
+            MAX_PREPENDEE_LEN = len(clause)
+            # TODO: normalize prepending whitespace
 
 def random_whitespace():
     return randrange(MIN_WHITESPACE, MAX_WHITESPACE)*" "
@@ -49,8 +63,7 @@ if __name__ == "__main__":
         move_next_iter = False
         while not move_next_iter:
             if randrange(0,10) > WOW_CHANCE:
-                random_insert_clause(random_whitespace()+choice(DOGE_EJACULATES),
-                                     doge_face_file) 
+                random_insert_clause(choice(DOGE_EJACULATES), doge_face_file) 
             move_next_iter = True
 
         random_insert_clause(clause, doge_face_file)
