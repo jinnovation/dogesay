@@ -25,6 +25,7 @@ def insert(clause, img_file):
 if __name__ == "__main__":
     parser = ArgumentParser(description="Cowsay for a new generation.")
     parser.add_argument("inputfile", metavar="<input file>")
+    parser.add_argument("-a", "--ascii", action="store_true", help="Use ASCII doge")
 
     clauses_file = open(parser.parse_args().inputfile, "r")
 
