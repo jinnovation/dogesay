@@ -6,6 +6,8 @@ from random   import randrange
 DOGE_PREFIXES = ["such", "much", "so", "many", "wow"]
 DOGE_EJACULATES = ["wow"]
 
+DOGE_FACE = open("static/doge.txt","r").read()
+
 def num_words(clause):
     numwords = 0
     for word in clause.split():
@@ -39,3 +41,5 @@ if __name__ == "__main__":
         # TODO: work with clause as the clause
         clause = doge_syntax(clause)
         print(clause)
+
+    print(DOGE_FACE)
