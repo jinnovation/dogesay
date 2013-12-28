@@ -12,13 +12,10 @@ WOW_CHANCE = 5
 MAX_WHITESPACE = 15
 
 def doge_syntax(clause):
-    if len(clause.split()) > 1:
-        return clause
-    else:
-        return choice(DOGE_PREFIXES)+" "+clause
+    return clause if len(clause.split())>1 else choice(DOGE_PREFIXES)+" "+clause
 
-def insert(clause, img_file):
-    img_file[randrange(0,len(img_file))] += (" " + clause)
+def random_insert_clause(clause, img_file):
+    img_file[randrange(0,len(img_file))] += clause
 
 def random_whitespace():
     return randrange(0,MAX_WHITESPACE)*" "
@@ -42,10 +39,10 @@ if __name__ == "__main__":
         move_next_iter = False
         while not move_next_iter:
             if randrange(0,10) > WOW_CHANCE:
-                insert(choice(DOGE_EJACULATES), doge_face_file) 
+                random_insert_clause(choice(DOGE_EJACULATES), doge_face_file) 
             move_next_iter = True
 
-        insert(clause, doge_face_file)
+        random_insert_clause(clause, doge_face_file)
 
     for line in doge_face_file:
         print(line)
