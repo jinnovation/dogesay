@@ -1,5 +1,0 @@
-example
-program
-like cowsay but shibe
-showing how it works
-command-line
