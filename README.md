@@ -9,6 +9,9 @@ It takes in, as its argument, a text file containing a new-line delineated
 list of either single words or full clauses; from this, it generates doge with
 the trademark text (randomly arranged around doge).
 
+Per doge convention, the script generates a random amount of "wow" to stick in
+alongside the user-provided clauses.
+
 ## Example ##
 
 `python dogesay.py example.txt`
