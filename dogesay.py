@@ -6,7 +6,9 @@ from random   import randrange
 DOGE_PREFIXES = ["such", "much", "so", "many", "wow"]
 DOGE_EJACULATES = ["wow"]
 
-DOGE_FACE = open("static/doge.txt","r").read()
+DOGE_FACE_FILE = open("static/doge.txt","r")
+
+WOW_CHANCE = 7
 
 def num_words(clause):
     numwords = 0
@@ -32,8 +34,7 @@ if __name__ == "__main__":
         move_next_iter = False
 
         while not move_next_iter:
-            generate_wow = True if randrange(0,10) > 8 else False
-            if generate_wow:
+            if randrange(0,10) > WOW_CHANCE:
                 # TODO: work with "wow" as the clause
                 print(DOGE_EJACULATES[randrange(0,len(DOGE_EJACULATES))])
             move_next_iter = True
@@ -42,4 +43,5 @@ if __name__ == "__main__":
         clause = doge_syntax(clause)
         print(clause)
 
-    print(DOGE_FACE)
+    for line in DOGE_FACE_FILE:
+        print(line.rstrip())
