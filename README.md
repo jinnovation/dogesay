@@ -15,8 +15,12 @@ alongside the user-provided clauses.
 ## Example ##
 
 `python dogesay.py example.txt`
-
 ![Dogesay scrot](ex/ex_scrot.jpg?raw=true)
+
+## Acknowlegement ##
+
+I snagged the doge graphic from
+[user thiderman's `doge` project](https://github.com/thiderman/doge).
 
 ## TODO ##
 * Implement text generation on doge's left as well as right
