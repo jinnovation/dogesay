@@ -26,11 +26,16 @@ if __name__ == "__main__":
     clausefile = open(parser.parse_args().inputfile, "r")
 
     for clause in clausefile:
+        clause = clause.strip()
         move_next_iter = False
 
         while not move_next_iter:
-            generate_wow? = True if randrange(0,100) > 60 else False
-            # TODO: work with "wow" as the clause
+            generate_wow = True if randrange(0,10) > 8 else False
+            if generate_wow:
+                # TODO: work with "wow" as the clause
+                print(DOGE_EJACULATES[randrange(0,len(DOGE_EJACULATES))])
             move_next_iter = True
 
         # TODO: work with clause as the clause
+        clause = doge_syntax(clause)
+        print(clause)
