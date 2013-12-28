@@ -11,4 +11,4 @@ the trademark text (randomly arranged around doge).
 
 ## Example ##
 
-`python dogesay.py `
+`python dogesay.py example.txt`
