@@ -14,3 +14,9 @@ the trademark text (randomly arranged around doge).
 `python dogesay.py example.txt`
 
 ![Dogesay scrot](ex/ex_scrot.jpg?raw=true)
+
+## TODO ##
+* Implement text generation on doge's left as well as right
+* If you look at source, I include an option for ASCII doge that I haven't
+  gotten around to implementing just yet
+* Option to take in strings as command-line arguments (as well as from file)
