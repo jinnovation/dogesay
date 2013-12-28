@@ -13,4 +13,4 @@ the trademark text (randomly arranged around doge).
 
 `python dogesay.py example.txt`
 
-![Dogesay scrot]()
+![Dogesay scrot](ex/ex_scrot.jpg?raw=true)
