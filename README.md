@@ -5,17 +5,23 @@ Cowsay for a new generation!
 Dogesay is based on the ridiculous [doge](http://knowyourmeme.com/memes/doge)
 meme.
 
-It takes in, as its argument, a text file containing a new-line delineated
-list of either single words or full clauses; from this, it generates doge with
-the trademark text (randomly arranged around doge).
+It takes in, as its argument, either:
+* a collection of either single words or full clauses; or
+* a text file containing a new-line delineated list of either single words or
+  full clauses.
 
+From this, it generates doge with the trademark text (randomly arranged around
+doge).
+  
 Per doge convention, the script generates a random amount of "wow" to stick in
 alongside the user-provided clauses.
 
 ## Example ##
 
-`python dogesay.py example.txt`
+`python dogesay.py -f ex/example.txt`
 ![Dogesay scrot](ex/ex_scrot.jpg?raw=true)
+
+`python dogesay.py "computer science wow" "shibe" "hacker ethic" "free as in freedom" "GNU"`
 
 ## Acknowlegement ##
 
