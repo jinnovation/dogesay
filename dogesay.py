@@ -38,7 +38,7 @@ if __name__ == "__main__":
     # source_group = parser.add_mutually_exclusive_group(required=True)
     # source_group.add_argument("clauses", nargs="*")
     # source_group.add_argument("-f", "--file", metavar="<input file>")
-    parser.add_argument("clause", nargs="*")
+    parser.add_argument("clauses", nargs="*")
     parser.add_argument("-a", "--ascii", action="store_true",
                         help="Use ASCII doge")
 
@@ -55,9 +55,9 @@ if __name__ == "__main__":
 
         move_next_iter = False
         while not move_next_iter:
-            if randrange(0,10) > WOW_CHANCE:
+            while randrange(0,10) > WOW_CHANCE:
                 random_insert_clause(choice(DOGE_EJACULATES), doge_face_file) 
-            move_next_iter = True
+                move_next_iter = True
 
         random_insert_clause(clause, doge_face_file)
 
