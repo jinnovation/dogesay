@@ -31,6 +31,10 @@ def random_insert_clause(clause, img_file):
 
 def random_whitespace():
     return randrange(MIN_WHITESPACE, MAX_WHITESPACE)*" "
+
+def generate_ejacs():
+    while randrange(0,10) > WOW_CHANCE:
+        random_insert_clause(choice(DOGE_EJACULATES), doge_face_file)
     
 if __name__ == "__main__":
     parser = ArgumentParser(description="Cowsay for a new generation.")
@@ -52,11 +56,7 @@ if __name__ == "__main__":
     for clause in clauses_source:
         clause = random_whitespace()+doge_syntax(clause.strip())
 
-        move_next_iter = False
-        while not move_next_iter:
-            while randrange(0,10) > WOW_CHANCE:
-                random_insert_clause(choice(DOGE_EJACULATES), doge_face_file) 
-                move_next_iter = True
+        generate_ejacs()
 
         random_insert_clause(clause, doge_face_file)
 
