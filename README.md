@@ -33,6 +33,4 @@ I snagged the doge graphic from
 ## TODO ##
 * Implement text generation on doge's left as well as right (kind of low on my
   priorities; it's turning out to be a total nightmare to deal with)
-* If you look at source, I include an option for ASCII doge that I haven't
-  gotten around to implementing just yet
 * Pretty text colors
