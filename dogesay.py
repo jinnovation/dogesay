@@ -40,8 +40,6 @@ if __name__ == "__main__":
                         help="Use text file as input (ignores subsequent clauses)")
     parser.add_argument("clauses", nargs="*",
                         help="things you want doge to say")
-    parser.add_argument("-a", "--ascii", action="store_true",
-                        help="Use ASCII doge")
 
     args = parser.parse_args()
 
