@@ -30,13 +30,15 @@ def random_insert_clause(clause, img_file):
     img_file[random_select_no_repeat(len(img_file), used_indices)] += (random_whitespace()+clause)
     # TODO: implement prepending as well
 
-
 def random_whitespace():
     return randrange(MIN_WHITESPACE, MAX_WHITESPACE)*" "
     
 if __name__ == "__main__":
     parser = ArgumentParser(description="Cowsay for a new generation.")
-    parser.add_argument("inputfile", metavar="<input file>")
+    # source_group = parser.add_mutually_exclusive_group(required=True)
+    # source_group.add_argument("clauses", nargs="*")
+    # source_group.add_argument("-f", "--file", metavar="<input file>")
+    parser.add_argument("clause", nargs="*")
     parser.add_argument("-a", "--ascii", action="store_true",
                         help="Use ASCII doge")
 
@@ -45,9 +47,10 @@ if __name__ == "__main__":
     doge_face_path = DOGE_FACE_PATHS["ascii" if args.ascii else "norm"]
     doge_face_file = open(doge_face_path, "r").read().splitlines()
 
-    clauses_file = open(args.inputfile, "r")
+    # clauses_source = open(args.inputfile, "r")
+    clauses_source = args.clauses
 
-    for clause in clauses_file:
+    for clause in clauses_source:
         clause = random_whitespace()+doge_syntax(clause.strip())
 
         move_next_iter = False
