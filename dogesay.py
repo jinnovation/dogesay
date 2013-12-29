@@ -22,12 +22,10 @@ def random_select_no_repeat(max, ref_pool):
         index =  randrange(0,max)
     ref_pool.append(index)
     return index
-    
-def prepend(orig, addition):
-    orig = addition + orig    
 
 def random_insert_clause(clause, img_file):
-    img_file[random_select_no_repeat(len(img_file), used_indices)] += (random_whitespace()+clause)
+    insert_index = random_select_no_repeat(len(img_file), used_indices)
+    img_file[insert_index] += (random_whitespace()+clause)
 
 def random_whitespace():
     return randrange(MIN_WHITESPACE, MAX_WHITESPACE)*" "
@@ -38,8 +36,6 @@ def generate_ejacs():
     
 if __name__ == "__main__":
     parser = ArgumentParser(description="Cowsay for a new generation.")
-    # source_group = parser.add_mutually_exclusive_group(required=True)
-    # source_group.add_argument("clauses", nargs="*")
     parser.add_argument("-f", "--file", metavar="<input file>")
     parser.add_argument("clauses", nargs="*")
     parser.add_argument("-a", "--ascii", action="store_true",
