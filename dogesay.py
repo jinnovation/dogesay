@@ -12,8 +12,6 @@ WOW_CHANCE = 5
 MAX_WHITESPACE = 15
 MIN_WHITESPACE = 2
 
-MAX_PREPENDEE_LEN = 0
-
 def doge_syntax(clause):
     return clause if len(clause.split())>1 else choice(DOGE_PREFIXES)+" "+clause
 
@@ -31,17 +29,7 @@ def prepend(orig, addition):
 def random_insert_clause(clause, img_file):
     img_file[random_select_no_repeat(len(img_file), used_indices)] += (random_whitespace()+clause)
     # TODO: implement prepending as well
-    # if randrange(0,2)==1:
-    #     img_file[random_select_no_repeat(len(img_file), used_indices)] += (random_whitespace()+clause)
-    # else:
-    #     index = random_select_no_repeat(len(img_file), used_indices)
-    #     prependee = clause + ""
 
-    #     img_file[index] = prependee + img_file[index]
-    #     if len(clause)>MAX_PREPENDEE_LEN:
-    #         global MAX_PREPENDEE_LEN
-    #         MAX_PREPENDEE_LEN = len(clause)
-    #         # TODO: normalize prepending whitespace
 
 def random_whitespace():
     return randrange(MIN_WHITESPACE, MAX_WHITESPACE)*" "
