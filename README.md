@@ -19,9 +19,11 @@ alongside the user-provided clauses.
 ## Example ##
 
 `python dogesay.py -f ex/example.txt`
-![Dogesay scrot](ex/ex_scrot.jpg?raw=true)
+![Dogesay with file as input](ex/ex_scrot_fileinput.jpg?raw=true)
 
-`python dogesay.py "computer science wow" "shibe" "hacker ethic" "free as in freedom" "GNU"`
+`python dogesay.py "computer science wow" "shibe" "hacker ethic" "free as in
+freedom" "GNU"`
+![Dogesay with direct arguments](ex/ex_scrot_directarg.jpg?raw=true)
 
 ## Acknowlegement ##
 
