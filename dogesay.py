@@ -36,8 +36,10 @@ def generate_ejacs():
     
 if __name__ == "__main__":
     parser = ArgumentParser(description="Cowsay for a new generation.")
-    parser.add_argument("-f", "--file", metavar="<input file>")
-    parser.add_argument("clauses", nargs="*")
+    parser.add_argument("-f", "--file", metavar="<input file>",
+                        help="Use text file as input (ignores subsequent clauses)")
+    parser.add_argument("clauses", nargs="*",
+                        help="things you want doge to say")
     parser.add_argument("-a", "--ascii", action="store_true",
                         help="Use ASCII doge")
 
