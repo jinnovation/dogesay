@@ -20,12 +20,16 @@ doge).
 Per doge convention, the script generates a random amount of "wow" to stick in
 alongside the user-provided clauses.
 
+## Install
+
+`pip install dogesay`
+
 ## Example ##
 
-`./dogesay -f ex/example.txt`
+`dogesay -f ex/example.txt`
 ![Dogesay with file as input](ex/ex_scrot_fileinput.jpg?raw=true)
 
-`./dogesay "computer science wow" "shibe" "hacker ethic" "free as in
+`dogesay "computer science wow" "shibe" "hacker ethic" "free as in
 freedom" "GNU"`
 ![Dogesay with direct arguments](ex/ex_scrot_directarg.jpg?raw=true)
 
