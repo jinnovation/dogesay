@@ -1,7 +1,7 @@
+# Dogesay #
+
 [![License MIT](http://img.shields.io/:license-mit-blue.svg)](http://jinnovation.mit-license.org/)
 [![Gratipay](http://img.shields.io/gratipay/jinnovation.svg)](https://gratipay.com/jinnovation/)
-
-# Dogesay #
 
 Cowsay for a new generation!
 
