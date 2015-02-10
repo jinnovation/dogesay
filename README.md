@@ -2,6 +2,7 @@
 
 [![License MIT](http://img.shields.io/:license-mit-blue.svg)](http://jinnovation.mit-license.org/)
 [![Gratipay](http://img.shields.io/gratipay/jinnovation.svg)](https://gratipay.com/jinnovation/)
+[![Coverage Status](https://coveralls.io/repos/jinnovation/dogesay/badge.svg)](https://coveralls.io/r/jinnovation/dogesay)
 
 Cowsay for a new generation!
 
