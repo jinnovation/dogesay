@@ -3,9 +3,10 @@
 from argparse import ArgumentParser
 from random   import randrange, choice
 
+import pkgutil
+
 DOGE_PREFIXES   = ["such", "much", "so", "many", "wow", "very"]
 DOGE_EJACULATES = ["wow"]
-DOGE_FACE_PATH = "static/doge.txt"
 
 WOW_CHANCE = 8
 MAX_WHITESPACE = 15
@@ -29,11 +30,11 @@ def random_insert_clause(clause, img_file):
 def random_whitespace():
     return randrange(MIN_WHITESPACE, MAX_WHITESPACE)*" "
 
-def generate_ejacs():
+def generate_ejacs(output):
     while randrange(0,10) > WOW_CHANCE:
-        random_insert_clause(choice(DOGE_EJACULATES), doge_face_file)
+        random_insert_clause(choice(DOGE_EJACULATES), output)
     
-if __name__ == "__main__":
+def doge():
     parser = ArgumentParser(description="Cowsay for a new generation.")
     parser.add_argument("-f", "--file", metavar="<input file>",
                         help="Use text file as input (ignores subsequent clauses)")
@@ -42,16 +43,16 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    doge_face_file = open(DOGE_FACE_PATH, "r").read().splitlines()
+    doge_face_lines = pkgutil.get_data("dogesay", "static/doge.txt").decode().split("\n")
 
     clauses_source = args.clauses if args.file == None else open(args.file, "r")
 
     for clause in clauses_source:
         clause = random_whitespace()+doge_syntax(clause.strip())
 
-        generate_ejacs()
+        generate_ejacs(doge_face_lines)
 
-        random_insert_clause(clause, doge_face_file)
+        random_insert_clause(clause, doge_face_lines)
 
-    for line in doge_face_file:
+    for line in doge_face_lines:
         print(line)
