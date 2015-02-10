@@ -5,8 +5,7 @@ from random   import randrange, choice
 
 DOGE_PREFIXES   = ["such", "much", "so", "many", "wow", "very"]
 DOGE_EJACULATES = ["wow"]
-DOGE_FACE_PATHS = {"norm" : "static/doge.txt",
-                   "ascii": "static/doge_ascii.txt"}
+DOGE_FACE_PATH = "static/doge.txt"
 
 WOW_CHANCE = 8
 MAX_WHITESPACE = 15
@@ -43,10 +42,8 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    doge_face_path = DOGE_FACE_PATHS["ascii" if args.ascii else "norm"]
-    doge_face_file = open(doge_face_path, "r").read().splitlines()
+    doge_face_file = open(DOGE_FACE_PATH, "r").read().splitlines()
 
-    # clauses_source = open(args.inputfile, "r")
     clauses_source = args.clauses if args.file == None else open(args.file, "r")
 
     for clause in clauses_source:
