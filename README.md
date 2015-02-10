@@ -30,11 +30,6 @@ freedom" "GNU"`
 I snagged the doge graphic from
 [user thiderman's `doge` project](https://github.com/thiderman/doge).
 
-## TODO ##
-* Implement text generation on doge's left as well as right (kind of low on my
-  priorities; it's turning out to be a total nightmare to deal with)
-* Pretty text colors
-
 # License
 The MIT License (MIT)
 
