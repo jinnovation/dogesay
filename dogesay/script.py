@@ -10,7 +10,7 @@ parser.add_argument("clauses", nargs="*",
 def main():
     args            = parser.parse_args()
     doge_face_data  = pkgutil.get_data("dogesay", "static/doge.txt")
-    doge_face_lines = doge_face_data.decode().split("\n")
+    doge_face_lines = doge_face_data.decode('utf8').split("\n")
 
     clauses_source  = args.clauses if args.file == None else open(args.file, "r")
 
