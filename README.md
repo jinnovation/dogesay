@@ -8,8 +8,9 @@
 ## Author Notes (2020/07/25)
 
 This project was put together by baby me back in college out of boredom. The
-code is frankly dreadful, but I'll make an honest attempt to keep it working out
-of nostalgia.
+code is frankly dreadful, and the project I stole the doge from, 
+[`doge`](https://github.com/thiderman/doge), is honestly much better anyway.
+
 
 ## Overview
 
