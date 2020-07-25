@@ -5,6 +5,14 @@
 [![Coverage Status](https://coveralls.io/repos/jinnovation/dogesay/badge.svg)](https://coveralls.io/r/jinnovation/dogesay)
 [![PyPI](https://img.shields.io/pypi/dm/dogesay.svg)](https://pypi.python.org/pypi/dogesay)
 
+## Author Notes (2020/07/25)
+
+This project was put together by baby me back in college out of boredom. The
+code is frankly dreadful, but I'll make an honest attempt to keep it working out
+of nostalgia.
+
+## Overview
+
 Cowsay for a new generation!
 
 Dogesay is based on the ridiculous [doge](http://knowyourmeme.com/memes/doge)

@@ -1,5 +1,6 @@
 from argparse import ArgumentParser
 import pkgutil
+import random
 from random   import randrange, choice
 
 DOGE_PREFIXES   = ["such", "much", "so", "many", "wow", "very"]
@@ -33,8 +34,6 @@ def generate_ejacs(output):
 
 
 parser = ArgumentParser(description="Cowsay for a new generation.")
-parser.add_argument("-f", "--file", metavar="<input file>",
-                    help="Use text file as input (ignores subsequent clauses)")
 parser.add_argument("clauses", nargs="*",
                     help="things you want doge to say")
 def main():
@@ -42,13 +41,15 @@ def main():
     doge_face_data  = pkgutil.get_data(__name__, "static/doge")
     doge_face_lines = doge_face_data.decode('utf8').split("\n")
 
-    clauses_source  = args.clauses if args.file == None else open(args.file, "r")
+    clauses_source  = args.clauses
 
-    for clause in clauses_source:
+    indices = random.sample(range(len(doge_face_lines)), len(clauses_source))
+
+    for clause, index in zip(clauses_source, indices):
         clause      = random_whitespace()+doge_syntax(clause.strip())
 
         generate_ejacs(doge_face_lines)
-        random_insert_clause(clause, doge_face_lines)
+        doge_face_lines[index] += (random_whitespace() + clause)
 
     for line in doge_face_lines:
         print(line)
