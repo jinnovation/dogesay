@@ -29,7 +29,7 @@ setup(
     },
 
     package_data     = {
-        "dogesay": ["static/*.txt"],
+        "dogesay": ["static/*"],
     },
 )
 
